@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1B"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/coverview"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:background="@drawable/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileview"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="150dp"
+            android:src="@drawable/my"
+            app:civ_border_color="@color/black"
+            app:civ_border_overlay="true"
+            app:civ_border_width="5dp" />
+
+        <Button
+            android:id="@+id/camera"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="130dp"
+            android:drawableTop="@drawable/drawable_camera"
+            android:drawableTint="@color/white"
+            android:backgroundTint="#464E54"
+            app:cornerRadius="40dp" />
+        <Button
+            android:id="@+id/camera2"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="195dp"
+            android:layout_marginStart="355dp"
+            android:drawableTint="@color/white"
+            android:drawableTop="@drawable/drawable_camera"
+            android:backgroundTint="#464E54"
+            app:cornerRadius="40dp" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="310dp"
+        android:text="박재원"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="친구"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/fr_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="330dp"
+        android:text="313명"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/friend"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <Button
+        android:id="@+id/addstory"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="160dp"
+        android:backgroundTint="#2196F3"
+        android:drawableLeft="@drawable/drawable_plus"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        android:text="스토리에 추가"
+        android:textStyle="bold"
+        app:cornerRadius="7dp"
+        app:layout_constraintEnd_toStartOf="@+id/profile_setting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/friend"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/Edit_profile"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#464E54"
+        android:drawableLeft="@drawable/drawable_pencil"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        android:text="프로필 편집"
+        android:textStyle="bold"
+        app:cornerRadius="7dp"
+        app:layout_constraintEnd_toStartOf="@+id/profile_setting"
+        app:layout_constraintStart_toEndOf="@+id/addstory"
+        app:layout_constraintTop_toBottomOf="@+id/friend"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/profile_setting"
+        android:layout_width="60dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#464E54"
+        android:drawableEnd="@drawable/drawable_threedot"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        app:cornerRadius="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/friend"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/More_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
+        android:text="상세정보"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addstory" />
+
+    <TextView
+        android:id="@+id/high_school"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
+        android:text="송탄고등학교 졸업"
+        android:drawableStart="@drawable/drawable_mortarboard"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/More_information" />
+
+    <TextView
+        android:id="@+id/region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:text="경기도 평택 거주"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/drawable_home"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/high_school" />
+
+    <TextView
+        android:id="@+id/locate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/cardview_light_background"
+        android:text="경기도 수원 출신"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/drawable_location"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/region" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/cardview_light_background"
+        android:drawableStart="@drawable/drawable_threedot"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/white"
+        android:text="내 정보 보기"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locate" />
+
+    <Button
+        android:id="@+id/amend_info"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#125180"
+        android:text="전체 공개 정보 수정"
+        android:textColor="#BFDFF6"
+        app:cornerRadius="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
