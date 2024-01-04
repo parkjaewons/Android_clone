@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class Data(val context: Context, val info: ArrayList<info>) : BaseAdapter(){
+class Data(val context: Context, val info: ArrayList<info>) : BaseAdapter() {
 
 
     override fun getItem(position: Int): Any {
@@ -21,13 +21,14 @@ class Data(val context: Context, val info: ArrayList<info>) : BaseAdapter(){
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.custom_list,null)
+        val view: View = LayoutInflater.from(context).inflate(R.layout.custom_list, null)
 
         val photo = view.findViewById<ImageView>(R.id.iv_custom1)
         val text = view.findViewById<TextView>(R.id.tv_custom2)
 
         val infolist = info[position]
-        val resourceId = context.resources.getIdentifier(infolist.icon, "drawable", context.packageName)
+        val resourceId =
+            context.resources.getIdentifier(infolist.icon, "drawable", context.packageName)
         text.setTextColor(Color.WHITE)
         photo.setImageResource(resourceId)
         text.text = infolist.list

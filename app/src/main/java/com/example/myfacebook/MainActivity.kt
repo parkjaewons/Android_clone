@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val camera2 = findViewById<Button>(R.id.camera2)
 
         profile.setOnClickListener {
-           val intent = Intent(this, SettingProfile::class.java)
+            val intent = Intent(this, SettingProfile::class.java)
             startActivity(intent)
         }
         camera.setOnClickListener {
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             navigatePhotos()
         }
     }
+
     private fun navigatePhotos() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "image/*"
