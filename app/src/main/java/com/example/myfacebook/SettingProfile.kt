@@ -4,32 +4,32 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myfacebook.databinding.ActivityMainBinding
+import com.example.myfacebook.databinding.ActivitySettingprofileBinding
 
 class SettingProfile : AppCompatActivity() {
-
+    private val binding by lazy { ActivitySettingprofileBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settingprofile)
+        setContentView(binding.root)
 
-        var infolist = arrayListOf<info>(
-            info("   팔로우 설정", "folder"),
-            info("   프로필 상태", "warning"),
-            info("   Mera Verified", "check_mark"),
-            info("   보관함", "card_box"),
-            info("   미리 보기", "eye"),
-            info("   활동 로그", "add_list"),
-            info("   프로필 및 태그 설정", "login"),
-            info("   게시물 및 태그 검토", "speech"),
-            info("   개인정보 보호 센터", "key_lock"),
-            info("   검색", "glass"),
-            info("   기념 계정설정", "love"),
-            info("   프로페셔널 모드 설정", "briefcase"),
-            info("   다른 프로필 만들기", "add")
-        )
+        val infolist = arrayListOf<info>()
+        infolist.add(info("   팔로우 설정", R.drawable.folder))
+        infolist.add(info("   프로필 상태", R.drawable.warning))
+        infolist.add(info("   Mera Verified", R.drawable.check_mark))
+        infolist.add(info("   보관함", R.drawable.card_box))
+        infolist.add(info("   미리 보기", R.drawable.eye))
+        infolist.add(info("   활동 로그", R.drawable.add_list))
+        infolist.add(info("   프로필 및 태그 설정", R.drawable.login))
+        infolist.add(info("   게시물 및 태그 검토", R.drawable.speech))
+        infolist.add(info("   개인정보 보호 센터", R.drawable.key_lock))
+        infolist.add(info("   검색", R.drawable.glass))
+        infolist.add(info("   기념 계정설정", R.drawable.love))
+        infolist.add(info("   프로페셔널 모드 설정", R.drawable.briefcase))
+        infolist.add(info("   다른 프로필 만들기", R.drawable.add))
 
-        val listview = findViewById<ListView>(R.id.mainListView)
-
-        val adapter = Data(this, infolist)
-        listview.adapter = adapter
+        binding.mainListView.adapter = CustomAdapter(infolist)
+        binding.mainListView.layoutManager = LinearLayoutManager(this)
     }
 }

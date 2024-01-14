@@ -1,4 +1,11 @@
 package com.example.myfacebook
 
-class info(val list:String, val icon: String) {
-}
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+@Parcelize
+data class info(
+    val itemTitle: String,
+    val itemImage: Int,
+) : Parcelable

@@ -8,36 +8,31 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.myfacebook.databinding.CustomListBinding
 
-class Data(val context: Context, val info: ArrayList<info>) : BaseAdapter() {
-
-
-    override fun getItem(position: Int): Any {
-        return info[position]
+class CustomAdapter(val list: ArrayList<info>) : RecyclerView.Adapter<CustomAdapter.Holder>(){
+    inner class Holder(val binding: CustomListBinding) : RecyclerView.ViewHolder(binding.root) {
+        val icon = binding.ivCustom1
+        val text = binding.tvCustom2
     }
 
-    override fun getItemId(position: Int): Long {
-        return 0
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomAdapter.Holder {
+        val binding = CustomListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(binding)
     }
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view: View = LayoutInflater.from(context).inflate(R.layout.custom_list, null)
-
-        val photo = view.findViewById<ImageView>(R.id.iv_custom1)
-        val text = view.findViewById<TextView>(R.id.tv_custom2)
-
-        val infolist = info[position]
-        val resourceId =
-            context.resources.getIdentifier(infolist.icon, "drawable", context.packageName)
-        text.setTextColor(Color.WHITE)
-        photo.setImageResource(resourceId)
-        text.text = infolist.list
-
-        return view
+    override fun onBindViewHolder(holder: CustomAdapter.Holder, position: Int) {
+        val item = list[position]
+        with(holder) {
+            icon.setImageResource(item.itemImage)
+            text.text = item.itemTitle
+        }
     }
 
-    override fun getCount(): Int {
-        return info.size
+    override fun getItemCount(): Int {
+        return list.size
     }
+
 
 }
